@@ -38,7 +38,6 @@ struct ContentView: View {
                 }
                 .foregroundColor(.white)
                 .font(.title2)
-                .padding(.top)
             }
         }
         .animation(.linear(duration: 0.5), value: isGrid)
