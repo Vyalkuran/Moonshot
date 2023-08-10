@@ -7,6 +7,26 @@
 
 import SwiftUI
 
+struct CustomDivider: View {
+    var body: some View {
+        Rectangle()
+            .frame(height: 2)
+            .foregroundColor(.lightBackground)
+            .padding(.vertical)
+    }
+}
+
+struct SectionTitle: View {
+    
+    let title: String
+    
+    var body: some View {
+        Text(title)
+            .font(.title.bold())
+            .padding(.bottom, 5)
+    }
+}
+
 struct MissionView: View {
     
     struct CrewMember {
@@ -27,26 +47,20 @@ struct MissionView: View {
                         .frame(maxWidth: geometry.size.width * 0.6)
                         .padding(.top)
                     
+                    Text(mission.formattedLaunchDate)
+                        .font(.title2.italic())
+                        .padding(.top)
+                    
                     VStack(alignment: .leading) {
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.lightBackground)
-                            .padding(.vertical)
+                        CustomDivider()
                         
-                        Text("Mission Highlights")
-                            .font(.title.bold())
-                            .padding(.bottom, 5)
+                        SectionTitle(title: "Mission Highlights")
                         
                         Text(mission.description)
                         
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.lightBackground)
-                            .padding(.vertical)
+                        CustomDivider()
                         
-                        Text("Crew")
-                            .font(.title.bold())
-                            .padding(.bottom, 5)
+                        SectionTitle(title: "Crew")
                     }
                     .padding(.horizontal)
                     
@@ -107,7 +121,7 @@ struct MissionView_Previews: PreviewProvider {
     static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
     
     static var previews: some View {
-        MissionView(mission: missions[0], astronauts: astronauts)
+        MissionView(mission: missions[1], astronauts: astronauts)
             .preferredColorScheme(.dark)
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B67672622A84230A00E7CAC6 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67672612A84230A00E7CAC6 /* MissionView.swift */; };
 		B67672642A850F9300E7CAC6 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67672632A850F9300E7CAC6 /* AstronautView.swift */; };
+		B67672662A85341E00E7CAC6 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67672652A85341E00E7CAC6 /* GridLayout.swift */; };
+		B67672682A8534A100E7CAC6 /* ListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67672672A8534A100E7CAC6 /* ListLayout.swift */; };
 		B688CF5B2A829FD50074DA31 /* MoonshotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688CF5A2A829FD50074DA31 /* MoonshotApp.swift */; };
 		B688CF5D2A829FD50074DA31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B688CF5C2A829FD50074DA31 /* ContentView.swift */; };
 		B688CF5F2A829FD60074DA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B688CF5E2A829FD60074DA31 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		B67672612A84230A00E7CAC6 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		B67672632A850F9300E7CAC6 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		B67672652A85341E00E7CAC6 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		B67672672A8534A100E7CAC6 /* ListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLayout.swift; sourceTree = "<group>"; };
 		B688CF572A829FD50074DA31 /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B688CF5A2A829FD50074DA31 /* MoonshotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonshotApp.swift; sourceTree = "<group>"; };
 		B688CF5C2A829FD50074DA31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			children = (
 				B688CF5A2A829FD50074DA31 /* MoonshotApp.swift */,
 				B688CF5C2A829FD50074DA31 /* ContentView.swift */,
+				B67672672A8534A100E7CAC6 /* ListLayout.swift */,
 				B67672612A84230A00E7CAC6 /* MissionView.swift */,
 				B67672632A850F9300E7CAC6 /* AstronautView.swift */,
 				B688CF762A841D260074DA31 /* Color-Theme.swift */,
@@ -79,6 +84,7 @@
 				B688CF6D2A8411750074DA31 /* astronauts.json */,
 				B688CF6C2A8411750074DA31 /* missions.json */,
 				B688CF602A829FD60074DA31 /* Preview Content */,
+				B67672652A85341E00E7CAC6 /* GridLayout.swift */,
 			);
 			path = Moonshot;
 			sourceTree = "<group>";
@@ -166,9 +172,11 @@
 				B67672622A84230A00E7CAC6 /* MissionView.swift in Sources */,
 				B688CF712A84121B0074DA31 /* Astronaut.swift in Sources */,
 				B67672642A850F9300E7CAC6 /* AstronautView.swift in Sources */,
+				B67672682A8534A100E7CAC6 /* ListLayout.swift in Sources */,
 				B688CF772A841D260074DA31 /* Color-Theme.swift in Sources */,
 				B688CF5D2A829FD50074DA31 /* ContentView.swift in Sources */,
 				B688CF5B2A829FD50074DA31 /* MoonshotApp.swift in Sources */,
+				B67672662A85341E00E7CAC6 /* GridLayout.swift in Sources */,
 				B688CF752A8415020074DA31 /* Mission.swift in Sources */,
 				B688CF732A84127D0074DA31 /* Bundle-Decodable.swift in Sources */,
 			);

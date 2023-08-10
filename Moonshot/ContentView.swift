@@ -16,48 +16,32 @@ struct ContentView: View {
         GridItem(.adaptive(minimum: 150))
     ]
     
+    @AppStorage("isGrid") private var isGrid = true
+    
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: columns) {
-                    ForEach(missions) { mission in
-                        NavigationLink {
-                            MissionView(mission: mission, astronauts: astronauts)
-                        } label: {
-                            VStack {
-                                Image(mission.image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)
-                                    .padding()
-                                
-                                VStack {
-                                    Text(mission.displayName)
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                    
-                                    Text(mission.formattedLaunchDate)
-                                        .font(.caption)
-                                        .foregroundColor(.white.opacity(0.5))
-                                }
-                                .padding(.vertical)
-                                .frame(maxWidth: .infinity)
-                                .background(.lightBackground)
-                            }
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(.lightBackground)
-                            }
-                        }
-                    }
+            Group {
+                if isGrid{
+                    GridLayout(columns: columns, missions: missions, astronauts: astronauts)
+                } else {
+                    ListLayout(missions: missions, astronauts: astronauts)
                 }
-                .padding([.horizontal, .bottom])
-                .preferredColorScheme(.dark)
             }
+            .preferredColorScheme(.dark)
             .navigationTitle("Moonshot")
             .background(.darkBackground)
+            .toolbar {
+                Button(){
+                    isGrid.toggle()
+                } label: {
+                    Label(isGrid ? "Show as grid" : "Show as table", systemImage: isGrid ? "circle.grid.3x3" : "list.bullet")
+                }
+                .foregroundColor(.white)
+                .font(.title2)
+                .padding(.top)
+            }
         }
+        .animation(.linear(duration: 0.5), value: isGrid)
     }
 }
 
